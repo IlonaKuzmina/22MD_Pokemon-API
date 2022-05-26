@@ -9,7 +9,7 @@ const App = () => (
     <Routes>
       <Route path="/" element={<PokemonsPage />} />
       <Route path="/pokemon" element={<PokemonsPage />} />
-      <Route path="/pokemon/:name" element={<SinglePokemon />} />
+      <Route path="/pokemon/:id" element={<SinglePokemon />} />
     </Routes>
   </Router>
 );

@@ -1,3 +1,50 @@
-.container{
-    text-align: center;
+.container {
+  text-align: center;
+  padding: 15px;
+  border-radius: 25px 5px;
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.5),
+    inset 0px 2px 5px rgba(0, 0, 0, 0.5);
+  max-width: 1000px;
+  margin: 50px auto;
+  color: #f99e4c;
+}
+
+.title {
+  margin: 40px;
+  color: #ef4648;
+}
+
+.image__container {
+}
+
+.info__container {
+}
+
+.image {
+  width: 100%;
+}
+
+.card__arrow {
+  border: none;
+  border-radius: 15px;
+  background-color: transparent;
+  color: #582841;
+  transition: 0.4s;
+  padding: 10px 30px;
+  cursor: pointer;
+  fill: #ef4648;
+
+  &:hover {
+    fill: #f36f38;
+    transition: 0.4s;
+  }
+
+  &:active {
+    fill: #f99e4c;
+    transition: 0.4s;
+  }
+}
+
+.card__arrow:disabled svg {
+  fill: rgb(124, 123, 121);
 }

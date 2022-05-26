@@ -14,9 +14,19 @@ export const pokemonApi = createApi({
       query: (name) => `pokemon/${name}`,
     }),
 
+    getPokemonById: builder.query<PokemonsExtend, number>({
+      query: (id) => `pokemon/${id}`,
+    }),
+
+    getNextPage: builder.query<PokemonApiResponse, number>({
+      query: (number) => `?offset=${number}&limit=20`,
+    }),
+
   }),
 });
 
-export const { useGetPokemonByNameQuery, useGetAllPokemonsQuery } = pokemonApi;
+export const {
+  useGetPokemonByNameQuery, useGetAllPokemonsQuery, useGetPokemonByIdQuery, useGetNextPageQuery,
+} = pokemonApi;
 
 export default pokemonApi;

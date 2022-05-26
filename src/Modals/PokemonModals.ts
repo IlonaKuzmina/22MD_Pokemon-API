@@ -1,6 +1,6 @@
 /* eslint-disable camelcase */
 export type PokemonApiResponse = {
-    page: number;
+    count: number;
     next: string;
     previous: string;
     results: BasePokemonInfo[];
@@ -14,7 +14,7 @@ export type BasePokemonInfo = {
 export type PokemonsExtend = {
     abilities: Ability[];
     base_experience: number;
-    forms: BasePokemonInfo[];
+    forms: BasePokemonInfo;
     game_indices: Indices[];
     height: number;
     held_items: [];
@@ -25,7 +25,7 @@ export type PokemonsExtend = {
     name: string;
     order: number;
     past_types:[];
-    species: BasePokemonInfo[];
+    species: BasePokemonInfo;
     sprites: Sprites[];
     stats: PokiStates[];
     types: PokiTypes[]
@@ -33,25 +33,25 @@ export type PokemonsExtend = {
 }
 
 export type Ability = {
-ability: BasePokemonInfo[];
-is_hidden: boolean;
-slot: number
+    ability: BasePokemonInfo;
+    is_hidden: boolean;
+    slot: number
 }
 
 export type Indices = {
     game__index: number;
-    version: BasePokemonInfo[];
+    version: BasePokemonInfo;
 }
 
 export type Moves = {
-    move: BasePokemonInfo[];
+    move: BasePokemonInfo;
     version_group_details: GroupDetails[];
 }
 
 export type GroupDetails = {
     level_learned_at: number;
-    move_learn_method: BasePokemonInfo[];
-    version_group: BasePokemonInfo[];
+    move_learn_method: BasePokemonInfo;
+    version_group: BasePokemonInfo;
 }
 
 export type Sprites = {
@@ -89,26 +89,10 @@ export type ArtWork = {
     front_default: string;
 }
 
-// export type Versions = {
-// generation-i: GenOne[];
-// // generation-ii:
-// // generation-iii:
-// // generation-iv:
-// // generation-v:
-// // generation-vi:
-// // generation-vii:
-// // generation-viii:
-// }
-
-// export type GenOne = {
-//     red-blue:
-//     yellow:
-// }
-
 export type PokiStates = {
-base_stat: number;
-effort: number;
-stat: BasePokemonInfo[];
+    base_stat: number;
+    effort: number;
+    stat: BasePokemonInfo[];
 }
 
 export type PokiTypes = {
@@ -120,7 +104,7 @@ export type AbilityExtend = {
     effect_changes: [];
     effect_entries: EfectEntrie[];
     flavor_text_entries: FlavorText[];
-    generation: BasePokemonInfo[];
+    generation: BasePokemonInfo;
     id: number;
     is_main_series: boolean;
     name: string;
@@ -129,23 +113,23 @@ export type AbilityExtend = {
 }
 
 export type EfectEntrie = {
-effect: string;
-language: BasePokemonInfo;
-short_effect: string;
+    effect: string;
+    language: BasePokemonInfo;
+    short_effect: string;
 }
 
 export type FlavorText = {
     flavor_text: string;
-    language: BasePokemonInfo[];
+    language: BasePokemonInfo;
     version_group: BasePokemonInfo[];
 }
 
 export type NamesM = {
-    language: BasePokemonInfo[];
+    language: BasePokemonInfo;
     name: string;
 }
 export type AbilityPokemon = {
     is_hidden: boolean;
-    pokemon: BasePokemonInfo[];
+    pokemon: BasePokemonInfo;
     slot:number;
 }
