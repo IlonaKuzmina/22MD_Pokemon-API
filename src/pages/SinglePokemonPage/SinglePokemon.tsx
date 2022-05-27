@@ -4,19 +4,14 @@ import { useNavigate, useParams } from 'react-router-dom';
 import Button from '../../components/buttons/Button';
 import {
   useGetPokemonByIdQuery,
-  useGetPokemonByNameQuery,
 } from '../../store/api/pokemonSlice';
 import styles from './SinglePokemon.module.scss';
 
 const imgBaseUrl = 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/';
 
 const SinglePokemon = () => {
-  const { name } = useParams();
   const { id } = useParams();
-  const { data, isLoading, isSuccess } = useGetPokemonByNameQuery(String(name));
   const { data: onePokemon } = useGetPokemonByIdQuery(Number(id));
-
-  console.log(onePokemon);
 
   const navigate = useNavigate();
 
@@ -102,7 +97,7 @@ const SinglePokemon = () => {
 
         <div className="col-xs-1">
           <button
-            disabled={onePokemon?.id === 1125}
+            disabled={onePokemon?.id === 898}
             className={styles.card__arrow}
             onClick={() => {
               navigate(`/pokemon/${Number(id) + 1}`);

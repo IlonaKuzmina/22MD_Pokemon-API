@@ -19,7 +19,7 @@ export const pokemonApi = createApi({
     }),
 
     getNextPage: builder.query<PokemonApiResponse, number>({
-      query: (number) => `?offset=${number}&limit=20`,
+      query: (limit) => `pokemon/?offset=0&limit=${limit}`,
     }),
 
   }),
